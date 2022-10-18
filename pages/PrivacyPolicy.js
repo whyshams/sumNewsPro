@@ -8,9 +8,10 @@ const PrivacyPolicy = () => {
             <meta name='description' content='Privacy Policy for SumNews WebApp' />
 
         </Head>
-        <h1 className='d-flex justify-content-center align-items-center mt-3 mb-3'>Privacy Policy for Sum News</h1>
+        <h1 className='mainpagetitle d-flex justify-content-center align-items-center mt-3 mb-3'>Privacy Policy for Sum News</h1>
+        <div className="contentcard rounded">
 
-<p>At Sum News, accessible from https://sumnewsbd.com/, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by Sum News and how we use it.</p>
+        <p>At Sum News, accessible from https://sumnewsbd.com/, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by Sum News and how we use it.</p>
 
 <p>If you have additional questions or require more information about our Privacy Policy, do not hesitate to contact us.</p>
 
@@ -101,6 +102,8 @@ const PrivacyPolicy = () => {
 <p>Another part of our priority is adding protection for children while using the internet. We encourage parents and guardians to observe, participate in, and/or monitor and guide their online activity.</p>
 
 <p>Sum News does not knowingly collect any Personal Identifiable Information from children under the age of 13. If you think that your child provided this kind of information on our website, we strongly encourage you to contact us immediately and we will do our best efforts to promptly remove such information from our records.</p>
+        </div>
+
     </>
   )
 }

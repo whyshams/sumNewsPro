@@ -14,7 +14,9 @@ import Pagination from '../../../components/Pagination';
 
 
 
+
 const Division = ({Data,Division}) => {
+  
     
     const[banglaText,setBanglaText] = useState();
     
@@ -59,26 +61,26 @@ const paginate = pageNumber => setCurrentPage(pageNumber);
       <div className='row'>
         <div className='col-md-12'> 
         <div className='MainPageTitle'>
-          <h2 className=' m-3 d-flex justify-content-center align-items-center'>
+          <h2 className=' mainpagetitle d-flex justify-content-center align-items-center'>
             বিভাগ অনুযায়ী বাংলা সংবাদ
           </h2>
         </div>
         </div>
       </div>
 
-      <hr className='text-muted'/>
+      
       <section>
-      <div className='bdCatFirstPart card'>
+      <div className='select rounded'>
       <div className='row'>
             <div className='col-md-12'>
       <div className='b-block'>
         <div className='m-2'>
-        <h6 className='OptionTitle d-flex justify-content-center align-items-center mt-3 mb-4'>বিভাগ পরিবর্তন করে উক্ত বিভাগের সর্বশেষ সংবাদ দেখুন</h6>
+        <h6 className='selecttitle d-flex justify-content-center align-items-center mt-3 mb-4'>বিভাগ পরিবর্তন করে উক্ত বিভাগের সর্বশেষ সংবাদ দেখুন</h6>
         
-        <form className='form-group d-flex justify-content-center align-items-center' onSubmit={handleSubmit}>
+        <form className=' d-flex justify-content-center align-items-center' onSubmit={handleSubmit}>
             <label>
-            <div className='mb-3 '>বিভাগ পরিবর্তন করুন  <IconContext.Provider value={{className:"fa-bounce"}}> <FaAngleDown/></IconContext.Provider> </div>
-            <select className='form-control SelectOption' value={banglaText} onChange={(e) => setBanglaText(e.target.value)}>
+            <div className='optiontitle mb-3 '>বিভাগ পরিবর্তন করুন  <IconContext.Provider value={{className:"fa-bounce"}}> <FaAngleDown/></IconContext.Provider> </div>
+            <select className=' rounded option' value={banglaText} onChange={(e) => setBanglaText(e.target.value)}>
             <option value='ঢাকা'>ঢাকা</option>
             <option value='চট্টগ্রাম'>চট্টগ্রাম</option>
             <option value='খুলনা'>খুলনা</option>
@@ -90,7 +92,7 @@ const paginate = pageNumber => setCurrentPage(pageNumber);
             
             
             </select>
-          <button className='btn CopyButton mt-3' type='submit'>Submit</button>
+          <button className='btn selectbutton btn-light' type='submit'>Submit</button>
 
 
             </label>
@@ -106,27 +108,24 @@ const paginate = pageNumber => setCurrentPage(pageNumber);
     </div>
 
       </section>
-      <hr className='text-muted'/>
+   
 
       
       
      
-      <div className='catNameMain'>
+      <div className='pagenamecard'>
       <div className=''>
-        <p className='d-flex justify-content-center align-items-center text-secondary cCat'>বর্তমান বিভাগ</p>
-        <div className='categoryName'>
+        <p className='d-flex justify-content-center align-items-center pagenametitle'>বর্তমান বিভাগ</p>
+        <div >
         <div className='d-flex justify-content-center align-items-center cCat2'>
 
-        <h1>{Division}</h1>
+        <h1 className='pagename'>{Division}</h1>
         </div>
        </div>
       </div>
 
       </div>
-      <hr className='text-muted'/>
-
-      
-      <hr className='text-muted'/>
+     
 
     
        <section>
@@ -137,47 +136,47 @@ const paginate = pageNumber => setCurrentPage(pageNumber);
               
           {
       paginatedData?.map((data)=>(
-        <div key={data.title} className='card col-12'>
+        <div key={data.title} className='contentcard col-12'>
           
           <div  className='row col-md-12 '>
           <div className='col-md-4 col-12'>
             
-            <img className='rounded BDImage ' src={data.media} alt={data.title}/>
+            <img className='rounded image ' src={data.media} alt={data.title}/>
   
           </div>
           <div className='col-md-8 '>
-          <div className='col-12 nationalContent'>
-            <h3 className='nationalTitle fontFat mb-2 d-flex justify-content-center align-items-center'>{data.title}</h3>
+          <div className='col-12 maincontent'>
+            <h3 className='contenttitle fontFat mb-2 d-flex justify-content-center align-items-center'>{data.title}</h3>
             
             
             
-               <div><p className='nationalSummary'><strong>Description :</strong> {data.summary.split(" ").splice(0,40).join(" ")}</p></div>
+               <div><p className='contentpara'><strong className='contentparatitle'>Description :</strong> {data.summary.split(" ").splice(0,40).join(" ")}</p></div>
             
             
             
   
-            <div className='d-block'>
-              <h5 className='  d-flex justify-content-center align-items-center' >{moment(data.published_date).fromNow()}</h5> 
+            <div className='d-block m-5'>
+              <h5 className='  m-2 contentparatitle  d-flex justify-content-center align-items-center' >{moment(data.published_date).fromNow()}</h5> 
               <div className=' d-flex justify-content-center align-items-center'>
               <h6 >by </h6>
   
               </div>
               <div className='d-flex justify-content-center align-items-center'>
-              <p>{data.rights.toUpperCase()}</p>
+              <p className='sourcename'>{data.rights.toUpperCase()}</p>
               </div>
             </div>
              
             
-            <div className='row'>
+            <div className='row contentbutton'>
                                         
                                         
                                         
                                    
                                 <div className=' col-12 col-md-12 d-flex d-md-flex justify-content-center'>
-                                <a target="_blank" rel="noreferrer" className=' btn  CopyButton mx-2 px-5' href={data.link}>Read Full News</a>
+                                <a target="_blank" rel="noreferrer" className=' btn  button btn-light m-3' href={data.link}>Read Full News</a>
                                 <CopyToClipboard text={data.media} >
                                        
-                                       <button className='btn btn-warning p-2 m-3'>Copy image Link</button>
+                                       <a href='/EditImage/Editor' className=' btn  button btn-light m-3'>Copy image Link</a>
                                                                            </CopyToClipboard>
   
                                 </div>

@@ -6,15 +6,15 @@ const Footer = () => {
     <hr/>
         <div className="Footer">
         <div className='Footer-menu pt-4 pb-1 d-flex flex-wrap justify-content-center align-items-center'>
-                <Link href='/AboutUs'><div className='btn text-secondary Footer-button'>About Us</div></Link>
-                <Link href='/ContactUs'><div className='btn text-secondary Footer-button'>Contact Us</div></Link>
-                <Link href='/Terms'><div className='btn text-secondary Footer-button'>Terms &amp; Conditions</div></Link>
-                <Link href='/PrivacyPolicy'><div className='btn text-secondary Footer-button'>Privacy Policy</div></Link>
-                <Link href='/Disclaimer'><div className='btn text-secondary Footer-button'>Disclaimer</div></Link>
+                <Link href='/AboutUs'><div className='btn btn-matt m-3'>About Us</div></Link>
+                <Link href='/ContactUs'><div className='btn btn-matt m-3'>Contact Us</div></Link>
+                <Link href='/Terms'><div className='btn btn-matt m-3'>Terms &amp; Conditions</div></Link>
+                <Link href='/PrivacyPolicy'><div className='btn btn-matt m-3'>Privacy Policy</div></Link>
+                <Link href='/Disclaimer'><div className='btn btn-matt m-3'>Disclaimer</div></Link>
 
                 
             </div>
-            <div className='Footer-content'>
+            <div className=''>
                 <div className='copyright mt-3 d-flex justify-content-center align-items-center'>&copy; Databases of Various News API from open source</div>
                 <div className='footer-logo'>
                     <p className='mt-5 d-flex text-muted justify-content-center align-items-center'>Brought To You By</p>

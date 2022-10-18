@@ -18,7 +18,7 @@ import LoAding from '../../components/LoAding';
 
 
 const Category = ({Data,Category}) => {
-    const {catData, setCatData,setCopied,setSumText,directSumData,setDirectSumData,setDirectsumInput,clear,Loading} = useResultContext();
+    const {catData, setCatData,directSumData,setDirectSumData,setDirectsumInput,clear,Loading} = useResultContext();
     const [cat,setCat] = useState('')
     setCatData(Data);
     const router = useRouter();
@@ -64,24 +64,24 @@ const paginate = pageNumber => setCurrentPage(pageNumber);
         <section>
         <div className='row '>
         <div className=' col-md-12'> 
-        <div className='MainPageTitle'>
-          <h2 className=' d-flex justify-content-center align-items-center'>
+        <div className=''>
+          <h2 className='mainpagetitle d-flex justify-content-center align-items-center'>
             category wise  Latest News Around the world 
           </h2>
         </div>
         </div>
       </div>
-      <hr className='text-muted'/>
-        <div className='firtpart card'>
+      
+        <div className='select rounded'>
             <div className='row m-2'>
             <div className='col-md-12'>
       <div className=' d-block '>
         
-        <h6 className='OptionTitle d-flex justify-content-center align-items-center mb-4 mt-3'>Change the category to see top news of that category</h6>
-        <form className=' form-group d-flex justify-content-center align-items-center' onSubmit={handleSubmit}>
+        <h6 className='selecttitle d-flex justify-content-center align-items-center mb-4 mt-3'>Change the category to see top news of that category</h6>
+        <form className='  d-flex justify-content-center align-items-center' onSubmit={handleSubmit}>
             <label>
-            <div className='mb-3 '>Select the category   <IconContext.Provider value={{className:"fa-bounce"}}> <FaAngleDown/></IconContext.Provider> </div>
-            <select className='form-control SelectOption' value={cat} onChange={(e) => setCat(e.target.value)}>
+            <div className='optiontitle mb-3 '>Select the category   <IconContext.Provider value={{className:"fa-bounce"}}> <FaAngleDown/></IconContext.Provider> </div>
+            <select className='rounded option' value={cat} onChange={(e) => setCat(e.target.value)}>
             <option value='World'>World News</option>
             <option value="World_Asia">-Asia</option>
             <option value="World_Europe">-Europe</option>
@@ -105,37 +105,37 @@ const paginate = pageNumber => setCurrentPage(pageNumber);
 
 
           </select>
-          <button className='btn CopyButton mt-2' type='submit'>Submit</button>
+          <button className='selectbutton btn btn-light' type='submit'>Submit</button>
           </label>
           </form>
           </div>
       </div>
             </div>
         </div>
-      <hr className='text-muted'/>
+      
 
 
         </section>
         
-        <div className='catNameMain'>
+        <div className='pagenamecard rounded'>
       <div className=''>
-        <p className='d-flex justify-content-center align-items-center text-secondary cCat'>Current Category</p>
-        <div className='categoryName'>
-        <div className='d-flex justify-content-center align-items-center cCat2'>
+        <p className='d-flex justify-content-center align-items-center text-secondary'>Current Category</p>
+        <div className=''>
+        <div className='d-flex justify-content-center align-items-center'>
 
-        <h1>{Category}</h1>
+        <h1 className='pagename'>{Category}</h1>
         </div>
        </div>
       </div>
 
       </div>
-      <hr className='text-muted'/>
+      
       {
       Loading ? <h1 className='modu'><LoAding/></h1> : <div></div>
      }
       
       
-      <hr className='text-muted'/>
+      
       {
           directSumData && <Summary directSumData={directSumData} />
         }
@@ -150,7 +150,7 @@ const paginate = pageNumber => setCurrentPage(pageNumber);
           
 
 
-                <div key={res.name}  className=' mt-5 card col-md-12 col-12'>
+                <div key={res.name}  className=' mt-5 contentcard col-md-12 col-12'>
                   <div key={res.name}  className='d-md-flex m-3 '>
                   <div className='col-md-4 col-12 d-flex justify-content-center align-items-center'>
                
@@ -161,23 +161,25 @@ const paginate = pageNumber => setCurrentPage(pageNumber);
                     
                  </div>
                  
-                 <div className='col-md-8 col-12'>
+                 <div className='col-md-8 col-12 maincontent'>
                     <div>
-                    <h4 className='nationalTitle fontFat mb-2 d-flex justify-content-center align-items-center'>{res.name}</h4>
+                    <h4 className=' contenttitle mb-2 d-flex justify-content-center align-items-center'>{res.name}</h4>
                     </div>
                     <div>
-                      <p>{res.description}.....</p>
+                      <p className='contentpara'>{res.description}.....</p>
                     </div>
                     <div className='catSource d-flex justify-content-center align-items-center'>
-                      <div className='d-block '>
+                      <div className='d-block m-5'>
                       <div className='d-flex justify-content-center align-items-center' >{moment(res.datePublished).fromNow()}</div>
                        
                        {
                            res.provider.map((hes)=>(
-                             <div key={hes.name}> 
-                                    <h6>by {hes.name}</h6>
+                             <div className='' key={hes.name}> 
+                                    <h6 className='d-flex justify-content-center align-items-center'>by</h6>
+                                    <h6 className='d-flex justify-content-center align-items-center'> {hes.name}</h6>
+
                                 <div className='d-flex justify-content-center align-items-center'>
-                                <img className='catSrcImage'  src={hes?.image?.thumbnail.contentUrl} alt={hes.name} />
+                                <img className='sourceimage'  src={hes?.image?.thumbnail.contentUrl} alt={hes.name} />
 
                                 </div>
                                    
@@ -193,16 +195,16 @@ const paginate = pageNumber => setCurrentPage(pageNumber);
                     </div>
                       
                 
-                    <div className='row'>
+                    <div className='row contentbutton'>
                                       
                                    
-                              <div className=' col-12 col-md-6 d-flex d-md-flex justify-content-center'>
-                                    <a target="_blank" rel="noreferrer" className=' btn btn-danger mx-2 px-5' href={res.url}>Read Full News</a>
-                               <button className='btn btn-warning p-2 m-2' onClick={()=> {setDirectsumInput(res.url)}}>Summarize</button>
+                              <div className=' d-block d-md-flex justify-content-center'>
+                                    <a target="_blank" rel="noreferrer" className=' btn btn-light m-3 button' href={res.url}>Read Full News</a>
+                               <a className='btn btn-light m-3 button' onClick={()=> {setDirectsumInput(res.url)}}>Summarize</a>
                                <CopyToClipboard text={res?.image?.thumbnail.contentUrl} >
                                        
-                                       <button className='btn btn-warning'>Copy image Link</button>
-                                                                           </CopyToClipboard>
+                                       <a href='/EditImage/Editor' className='btn btn-light m-3 button'>Copy image Link</a>
+                                                                            </CopyToClipboard>
 
 
                               </div>

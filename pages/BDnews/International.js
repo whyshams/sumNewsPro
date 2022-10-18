@@ -46,39 +46,39 @@ const paginate = pageNumber => setCurrentPage(pageNumber);
       <meta name="keywords" content="news bd 24,news for bangladesh,Bangladesh news, Bangla News,BD News,NewsBd,bangladesh english news, bangladesh english newspaper,english newspaper bangladesh,summary,summarize news,all bangladesh english news,bangladesh international news"/>
       <meta name="author" content="Nuren Shams Chowdhury"/>
       </Head>
-       <div className='row intmain '>
+       <div className='row  '>
         <div className=' '> 
-        <div className='intMainTitle'>
-          <h2 className='MainPageTitle text-secondary d-flex m-3 justify-content-center align-items-center'>
+        <div className=''>
+          <h2 className='mainpagetitle d-flex m-3 justify-content-center align-items-center'>
             News Of Bangladesh In International Media
           </h2>
         </div>
         </div>
       </div>
-      <hr className='text-muted'/>
+      
       <div className=''>
      
       
         
       </div>
-      <hr className='text-muted'/>
+   
 
         
         <div>
         {
                       paginatedData?.map((data)=>(
-                        <div className='card col-12' key={data.title}>
+                        <div className='contentcard col-12' key={data.title}>
                           <div className='content '>
                             <div className='col-md-12  d-md-flex '>
                             <div className='col-md-4 col-12 d-md-flex justify-content-center align-items-center'>
-                            <img className='BDImage rounded' src={data.urlToImage}  alt={data.title}  />
+                            <img className='image rounded' src={data.urlToImage}  alt={data.title}  />
 
                             </div>
                             <div className='col-md-8 col-12'>
-                            <div className='bdInt'>
+                            <div className='maincontent'>
                                 <div >
-                                <h4 className='bdInTitle fontFat mb-2 d-flex justify-content-center align-items-center'>{data.title}</h4>
-                                <p className='bdInDesc'>{data.description}. . . . .</p>
+                                <h4 className='contenttitle mb-2 d-flex justify-content-center align-items-center'>{data.title}</h4>
+                                <p className='contentpara'>{data.description}. . . . .</p>
                                
 
                                 </div>
@@ -87,8 +87,8 @@ const paginate = pageNumber => setCurrentPage(pageNumber);
                                 {
                               
                                   <div className='bdIntSource'>
-                                    <div className='d-md-flex d-flex justify-content-center align-items-center'>
-                                    <p> {moment(data.publishedAt).fromNow()} by </p>
+                                    <div className='contentparatitle d-md-flex d-flex justify-content-center align-items-center'>
+                                    <p className='contentparatitle'> {moment(data.publishedAt).fromNow()} by </p>
                                   
                                     </div>
                                     
@@ -103,17 +103,17 @@ const paginate = pageNumber => setCurrentPage(pageNumber);
 
                             </div>
                     
-                            <div className='row'>
+                            <div className='row contentbutton'>
                                       
                                   
                                       
                                  
-                              <div className=' col-12 col-md-6 d-flex d-md-flex justify-content-center'>
-                              <a target="_blank" rel="noreferrer" className=' btn btn-danger mx-2 px-5' href={data.url}>Read Full News</a>
-                               <button className='btn btn-warning p-2' onClick={()=> {setDirectsumInput(data.url) }}>Summarize</button>
+                              <div className=' d-block d-md-flex justify-content-center'>
+                              <a target="_blank" rel="noreferrer" className=' btn btn-light button m-3' href={data.url}>Read Full News</a>
+                               <a className='btn btn-light m-3 button'  onClick={()=> {setDirectsumInput(data.url) }}>Summarize</a>
                                <CopyToClipboard text={data.urlToImage} >
                                        
-                                       <button className='btn btn-warning p-2 m-3'>Copy image Link</button>
+                                       <a href='/EditImage/Editor' className='btn btn-light m-3 button'>Copy image Link</a>
                                                                            </CopyToClipboard>
 
                               </div>

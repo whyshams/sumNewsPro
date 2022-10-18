@@ -63,36 +63,37 @@ const paginatedData = bdNewsDataCat.slice(indexOfFirstPost, indexOfLastPost);
 const paginate = pageNumber => setCurrentPage(pageNumber);
     
   return (
-    <div>
+    <div className='maindiv'>
       <Head>
       <title>BD News || Categorical </title>
       <meta name="description" content="Get category wise News Of Bangladesh from the reputed English Newspaper of the country and summarize them in seconds with our summarizer tool..."/>
       <meta name="keywords" content="Bangladesh news, Bangla News,BD News,NewsBd,bangladesh english news, bangladesh english newspaper,english newspaper bangladesh,summary,summarize news,all bangladesh english news"/>
       <meta name="author" content="Nuren Shams Chowdhury"/>
       </Head>
+      
       <div className='selectSticky'>
       <div className='row '>
         <div className=' col-md-12'> 
-        <div className='MainPageTitle'>
-          <h2 className=' d-flex justify-content-center align-items-center'>
-              News From Bangladesh National Media 
+        <div className=''>
+          <h2 className='mainpagetitle d-flex justify-content-center align-items-center'>
+             English News From Bangladesh National Media 
 
           </h2>
         </div>
         </div>
       </div>
-      <hr className='text-muted'/>
-      <div className='bdCatFirstPart card'>
+      
+      <div className='select rounded'>
       <div className='row'>
             <div className='col-md-12'>
       <div className='b-block'>
         <div className='m-2'>
         
-        <h6 className='OptionTitle d-flex justify-content-center align-items-center mb-4 mt-2 '>Change the category to see top news of that category</h6>
-        <form className='form-group d-flex justify-content-center align-items-center' onSubmit={handleSubmit}>
+        <h6 className='selecttitle d-flex justify-content-center align-items-center mb-4 mt-2 '>Change the category to see top news of that category</h6>
+        <form className='  d-flex justify-content-center align-items-center' onSubmit={handleSubmit}>
             <label >
-               <div className='mb-3 '>Select the category   <IconContext.Provider value={{className:"fa-bounce"}}> <FaAngleDown/></IconContext.Provider> </div> 
-            <select className='form-control SelectOption' value={bdCat} onChange={(e) => setBdCat(e.target.value)}>
+               <div className='optiontitle mb-3 '>Select the category   <IconContext.Provider value={{className:"fa-bounce"}}> <FaAngleDown/></IconContext.Provider> </div> 
+            <select className='rounded option' value={bdCat} onChange={(e) => setBdCat(e.target.value)}>
             <option value='news'>News </option>
             
             <option value="politics">Politics</option>
@@ -110,7 +111,7 @@ const paginate = pageNumber => setCurrentPage(pageNumber);
             {/* news, sport, tech, world, finance, politics, business, economics, entertainment,beauty,travel,music,food,science */}
            
           </select>
-          <button className='CopyButton btn mt-2' type='submit'>Submit</button>
+          <button className='selectbutton btn btn-light ' type='submit'>Submit</button>
           </label>
           </form>
 
@@ -124,25 +125,21 @@ const paginate = pageNumber => setCurrentPage(pageNumber);
       
 
       </div>
-      <hr className='text-muted'/>
+     
 
-      <div className='catNameMain'>
       <div className=''>
-        <p className='d-flex justify-content-center align-items-center text-secondary cCat'>Current Category</p>
-        <div className='categoryName'>
-        <div className='d-flex justify-content-center align-items-center cCat2'>
+      <div className='pagenamecard rounded'>
+        <p className='d-flex justify-content-center align-items-center pagenametitle'>Current Category</p>
+        <div className=''>
+        <div className='d-flex justify-content-center align-items-center'>
 
-        <h1>{CategoryBd.toUpperCase()}</h1>
+        <h1 className='pagename'>{CategoryBd.toUpperCase()}</h1>
         </div>
        </div>
       </div>
 
       </div>
-      <hr className='text-muted'/>
-
-      
-      <hr className='text-muted'/>
-
+     
      {
       Loading ? <h1 className='modu'><LoAding/></h1> : <div></div>
      }
@@ -153,64 +150,56 @@ const paginate = pageNumber => setCurrentPage(pageNumber);
        
       
      
-      <div className='bdCatSecondPart'>
+      <div className=''>
         <div className='row'>
           <div className=''>
           {
     paginatedData?.map((data)=>(
-      <div key={data.title} className='card col-12'>
+      <div key={data.title} className='contentcard rounded col-12'>
         <div  className='row col-md-12 '>
         <div className='col-md-4 col-12'>
           
-          <img className='rounded BDImage' src={data.media} alt={data.title}/>
+          <img className='rounded image' src={data.media} alt={data.title}/>
 
         </div>
         <div className='col-md-8 '>
-        <div className='col-12 nationalContent'>
-          <h3 className='sumTitle fontFat mb-2 d-flex justify-content-center align-items-center'>{data.title}</h3>
+        <div className='col-12 maincontent'>
+          <h3 className='contenttitle mb-2 d-flex justify-content-center align-items-center'>{data.title}</h3>
           
-          <div><p className='summary1 m-2'>Summary :</p><p className='paraGraph m-1'> {data.summary}</p></div>
+          <div><h4 className='contentparatitle'>Summary :</h4><p className='contentpara m-1'> {data.summary}</p></div>
 
-          <div className='d-block m-2'>
-            <h5 className='m-2 paraGraph  d-flex justify-content-center align-items-center' >{moment(data.published_date).fromNow()}</h5> 
+          <div className='d-block m-5'>
+            <h5 className='m-2 contentparatitle  d-flex justify-content-center align-items-center time' >{moment(data.published_date).fromNow()}</h5> 
             <div className=' d-flex justify-content-center align-items-center'>
             <h6 >by </h6>
 
             </div>
             <div className='d-flex justify-content-center align-items-center'>
-            <p className='summary1'>{data.rights.toUpperCase()}</p>
+            <p className='sourcename'>{data.rights}</p>
             </div>
           </div>
            
-          
-          <div className='row'>
+           <div className='contentbutton'>
+           <div className='row'>
                                       
                                      
-                                        <div className=' col-12 col-md-6 d-flex d-md-flex justify-content-center'>
-                              <a target="_blank" rel="noreferrer" className=' btn btn-danger mx-2 px-5' href={data.link}>Read Full News</a>
-                               <button className='btn btn-warning p-2' onClick={()=> {setDirectsumInput(data.link)}}>Summarize</button>
-                               <CopyToClipboard text={data.media} >
-                                       
-                                       <button className='btn btn-warning p-2 m-3'>Copy image</button>
-                                                                           </CopyToClipboard>
-  
-
-                              </div>
-                                      {/*  <CopyToClipboard onCopy={()=> {router.push('/EditImage/Editor')}} text={data.media}>
-                                        <div className='col-12 col-md-6 d-md-flex d-flex justify-content-center'>
-                                        <button onClick={()=> {setText(data.media)}} className='btn d-flex CopyButton mx-2 px-5'>Edit This Photo</button>
-                                        </div>
-    
-                                        </CopyToClipboard>
-                                      */}
-                                      
-                                 
-                              
-                               </div>
-                              
+                                      <div className='  d-block d-md-flex justify-content-center'>
+                            <a target="_blank" rel="noreferrer" className='button btn btn-light m-3' href={data.link}>Read Full News</a>
+                             <a className='button btn btn-light m-3' onClick={()=> {setDirectsumInput(data.link)}}>Summarize</a>
+                             <CopyToClipboard text={data.media} >
+                                     
+                                     <a href='/EditImage/Editor' className=' button btn btn-light m-3'>Copy Image Link</a>
+                                                                         </CopyToClipboard>
 
 
-        <hr/>
+                            </div>
+                                
+                                    
+                               
+                            
+                             </div>
+
+           </div>
 
           </div>
 

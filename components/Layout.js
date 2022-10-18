@@ -45,6 +45,7 @@ const Layout = ({children}) => {
        
      
       </Head>
+      <div className='maindiv'>
       <div className=" row  col-lg-12 col-12">
         
         <header className=" col-12 col-lg-12 ">
@@ -58,6 +59,8 @@ const Layout = ({children}) => {
      <footer className='col-lg-12 col-12'>
           <Footer/>
       </footer> 
+      </div>
+      
 
 
     </>

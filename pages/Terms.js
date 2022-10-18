@@ -9,8 +9,9 @@ const Terms = () => {
             <meta name='description' content='Terms and Condition of SumNews' />
 
         </Head>
-        <h2><strong>Terms and Conditions</strong></h2>
-
+        <h2 className='mainpagetitle'><strong>Terms and Conditions</strong></h2>
+        <div className='contentcard rounded'>
+            
 <p>Welcome to Sum News!</p>
 
 <p>These terms and conditions outline the rules and regulations for the use of Sum News&apos;s Website, located at</p> <h1>Privacy Policy for Sum News</h1>  <p>At Sum News, accessible from https://sumnewsbd.com/ .</p>
@@ -132,6 +133,10 @@ const Terms = () => {
 <p>The limitations and prohibitions of liability set in this Section and elsewhere in this disclaimer: (a) are subject to the preceding paragraph; and (b) govern all liabilities arising under the disclaimer, including liabilities arising in contract, in tort and for breach of statutory duty.</p>
 
 <p>As long as the website and the information and services on the website are provided free of charge, we will not be liable for any loss or damage of any nature.</p>
+
+
+        </div>
+
     </div>
   )
 }

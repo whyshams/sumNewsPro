@@ -32,12 +32,13 @@ export default function Editor() {
  
 
       {
-        !image &&   <div className='d-flex justify-content-center align-items-center'>
+        !image &&   <div className='fullscreen contentcard rounded d-flex justify-content-center align-items-center'>
         <form onSubmit={handleSubmit}>
-          <h3>Please enter a valid Image Link that ends with .png , .jpg, .jpeg etc</h3>
+          <h3 className='contenttitle'>Please enter a valid Image Link that ends with .png , .jpg, .jpeg etc.<br/> </h3>
+          <p className='contentparatitle'>If there are some other texts after .png .jpg in your link, delete the extra texts</p>
           <input value={text} onChange={(e) => setText(e.target.value)} className='form-control' placeholder="Input Image Link.." />
-    <button type='submit' className='btn btn-warning'>Submit</button>
-    <button onClick={(e) => setText('')} className='btn btn-danger'>Clear</button>
+    <button type='submit' className='btn btn-light m-3'>Submit</button>
+    <button onClick={(e) => setText('')} className='btn btn-light m-3'>Clear</button>
 
         </form>
       </div>

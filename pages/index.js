@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function Home() {
   return (
     <>
-          <div className='Home'>
+          <div className='Home fullscreen contentcard'>
       <Head>
         <title>sumNews</title>
         <meta name="description" content="SumNews is a powerful online news aggregator that brings together the best stories from around the web and lets you summarize them in seconds. Read more about what makes SumNews different from other news sites of Bangladesh!" />

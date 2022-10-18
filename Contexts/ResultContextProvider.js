@@ -1,5 +1,6 @@
 import React,{useContext,createContext,useState,useEffect} from 'react';
 import axios from 'axios';
+import { set } from 'nprogress';
 
 
 const ResultContext = createContext();
@@ -41,6 +42,7 @@ export default function ResultContextProvider  ({children})  {
     const [clear,setClear] = useState(false)
 
     const getData = async () => {
+      setLoading(true)
         await axios.request(
            {
              method: 'POST',
@@ -51,7 +53,7 @@ export default function ResultContextProvider  ({children})  {
                'X-RapidAPI-Host': 'tldrthis.p.rapidapi.com'
                },
              data: `{"url":"${sumInput}","min_length":100,"max_length":300,"is_detailed":true}`
-         }).then((response)=>setSumData(response.data)).catch(err => setSumError(true))
+         }).then((response)=>setSumData(response.data)).catch(err => setSumError(true)).finally(() => setLoading(false))
  
        }
 

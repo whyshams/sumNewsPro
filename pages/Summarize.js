@@ -1,5 +1,7 @@
 import { useResultContext } from "../Contexts/ResultContextProvider";
 import Head from "next/head";
+import LoAding from "../components/LoAding";
+import { CopyToClipboard } from "react-copy-to-clipboard";
 
 const Summarize = () => {
     const {sumData,setSumInput,sumText,setSumText,Loading,sumError} = useResultContext();
@@ -11,7 +13,7 @@ const Summarize = () => {
         setSumInput(sumText);
         
       }
-  
+    
  
     
       return (
@@ -24,8 +26,8 @@ const Summarize = () => {
           </Head>
           <div className=' mt-3 row '>
         <div className=' col-md-12'> 
-        <div className='MainPageTitle'>
-          <h2 className='m-3 d-flex justify-content-center align-items-center'>
+        <div className=''>
+          <h2 className='mainpagetitle m-3 d-flex justify-content-center align-items-center'>
             Summarizer Tool 
           </h2>
         </div>
@@ -33,15 +35,19 @@ const Summarize = () => {
       
       </div>
         
-          <div className=''>
+          <div className='contentcard fullscreen rounded d-flex justify-content-center align-items-center'>
             <div className=''>
             <div className='col-12 d-block ' >
+
              <form onSubmit={handleSubmit} >
-                      <div className=' text-center d-flex justify-content-center align-items-center'>
-                          <input className='sumInput ' placeholder='Input LINK for Summarization...' type="text" value={sumText} onChange={(e)=>setSumText(e.target.value)} />
+            <div className='mb-5 contentparatitle d-flex justify-content-center align-items-center'>paste any english news or article Link in that input field and submit</div> 
+
+                      <div className=' text-center '>
+                          <input className='form-control summaryinput' placeholder='Input LINK for Summarization...' type="text" value={sumText} onChange={(e)=>setSumText(e.target.value)} />
                       </div>
                       <div className='text-center d-flex justify-content-center align-items-center m-3 '>
-                          <button  type='submit' className='btn btn-success CopyButton p-2'>Submit</button>
+                          <button  type='submit' className='btn btn-light button m-2'>Submit</button>
+                          <button className="btn btn-light button m-2" onClick={()=> setSumText('')}>Clear</button>
                       </div>
             </form>
      </div>
@@ -52,34 +58,36 @@ const Summarize = () => {
           <div className='sumResult'>
           <div >
             {
-              sumError && <h4>Sorry, Could not generate summary... Try again with another Link</h4>
+              sumError && <h4 className="contenttitle">Sorry, Could not generate summary... Try again with another Link</h4>
             }
                 {
-                  Loading && <div className='d-flex justify-content-center align-items-center'>
-                  <div className="multi-ripple">
-                  <div></div>
-                  <div></div>
-                </div>
-                </div>
+                  Loading && <div className="modu"><LoAding/></div> 
                 }
                 {
-                  sumData ? <div>
+                  sumData && <div>
                    
-                    <div className=' col-md-12'>
+                    <div className=' col-md-12 modu'>
                       
-                      <div className='d-block card'>
-                        <div className='nationalContent'>
-                        <h2 className='sumTitle d-flex justify-content-center align-items-center'>{sumData.article_title}</h2>
+                      <div className='d-block contentcard'>
+                    <a href="/Summarize" className='btn btn-light p-2 mb-4' >Close</a>
+
+                        <div className=''>
+                        <h2 className='contenttitle d-flex justify-content-center align-items-center'>{sumData.article_title}</h2>
                         <div className='m-2 d-flex justify-content-center align-items-center'>
-                          <img className='sumImage rounded' src={sumData.article_image} alt={sumData.article_title}/>
+                          <img className='image rounded' src={sumData.article_image} alt={sumData.article_title}/>
                         </div>
+                        <CopyToClipboard text={sumData.article_image} >
+                                       <div className='d-flex justify-content-center align-items-center'>
+                                       <a href='/EditImage/Editor' className='btn btn-light p-2 m-3 '>Copy image Link</a>
+                                       </div>
+                         </CopyToClipboard>
                         <div className=' summary  justify-content-center align-items-center'>
-                        <h4 className='summary1 d-flex justify-content-center align-items-center'>Summary : </h4>
+                        <h4 className='contentparatitle d-flex justify-content-center align-items-center'>Summary : </h4>
 
                         {
                       sumData?.summary.map(dat => (
                         <div key={dat}>
-                        <p className='summary2 d-block justify-content-center align-items-center'>{dat}</p>
+                        <p className='contentpara d-block justify-content-center align-items-center'>{dat}</p>
                         </div>
                       ))
                     }
@@ -92,11 +100,7 @@ const Summarize = () => {
                       
 
                     </div>
-                  </div> : <div className='instruSum '>
-                   <div className='intruSum1 d-flex justify-content-center align-items-center'>paste any english news or article Link in that input field and submit</div> 
-                   <div className='Small mt-3 OptionTitle d-flex justify-content-center align-items-center text-center'> If You Have Clicked the &apos;Copy Link To Summmarize&apos; Button, you have copied link in your clipboard.Just Paste and Submit!</div>
-                   
-                    </div>
+                  </div> 
                 }
 
            

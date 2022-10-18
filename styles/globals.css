@@ -1,10 +1,99 @@
-.newscatchimg{
-    height: auto;
-    width: 100%;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+*{
+  font-family: 'Poppins',sans-serif;
+ 
 }
-.BDImage{
+.maindiv{
+  background-color: black;
+}
+.image{
     height:auto;
     width:100%;
+}
+.contentcard{
+  color: white;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  background-color: #28282B;
+  padding: 20px;
+  margin-left: 10px;
+ 
+}
+.contenttitle{
+  font-weight: 700;
+  font-size: 28px;
+}
+.contentpara{
+  font-size: 16px;
+  font-weight: 400;
+  margin: 20px ;
+}
+.contentparatitle{
+  font-size: 17px;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.button{
+  font-weight: 700;
+}
+.pagenamecard{
+  color: white;
+  margin-left: 10px;
+  padding: 20px;
+  margin-top: 40px;
+
+}
+.pagenametitle{
+  font-size: 20px;
+  font-weight: 700;
+}
+.pagename{
+  font-size: 45px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  
+}
+.select{
+  background-color: #28282B;
+  margin-left: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: white;
+  padding: 20px;
+}
+.selecttitle{
+  font-size: 17px;
+  text-align: center;
+  font-weight: 700;
+
+}
+.optiontitle{
+  font-weight: 700;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+select{
+  width: 200px;
+  height: 40px;
+  margin-right: 10px;
+  background-color: black;
+  color: white;
+}
+.mainpagetitle{
+  color: white;
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-size: 45px;
+  text-align: center;
+  font-family: 'Bebas Neue',cursive;
 }
 .modu{
     display: block; /* Hidden by default */
@@ -18,6 +107,37 @@
    
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
+#nprogress .bar {
+  height :5px;
+  background: white;
+  border-radius: 50px ;
+
+  
+}
+#nprogress .peg{
+  box-shadow: none;
+}
+#nprogress .spinner-icon {
+color: #28282B !important;
+}
+.sourceimage{
+  height: 50px;
+  width: 50px;
+}
+footer{
+  color: white;
+}
+.btn-matt{
+  background-color: #28282B;
+  color: white;
+
+}
+.fullscreen{
+  min-height: 70vh;
+}
+.summaryinput{
+  width: 650px;
+}
 .modu2{
     display: block; /* Hidden by default */
     position: fixed; /* Stay in place */
@@ -30,11 +150,10 @@
    
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
-.menu{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.page-item{
+  color: black;
 }
+
 .sumInput{
     width:400px;
     height: 35px;
@@ -47,12 +166,13 @@
   
    
   }
+  
  .multi-ripple div {
     position: absolute;
     width: 4.6rem;
     height: 4.6rem;
     border-radius: 50%;
-    border: 0.3rem solid black ;
+    border: 0.3rem solid white ;
     animation: 1.5s ripple infinite;
    
 
@@ -68,6 +188,9 @@
   
     
 }
+
+
+
 @keyframes ripple {
     from {
       transform: scale(0);
@@ -77,5 +200,23 @@
     to {
       transform: scale(1);
       opacity: 0;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .button{
+      display: flex;
+      justify-content: center ;
+      align-items: center;
+
+    }
+    .contenttitle{
+      margin-top: 20px;
+    }
+    .copyright {
+      font-size: 14px;
+    }
+    .summaryinput{
+      width: 300px;
     }
   }

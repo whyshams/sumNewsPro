@@ -12,30 +12,33 @@ const NavBar = () => {
   return (
     <>
    
-
-  <nav className='menu'>
+    <div className='row'>
+    <nav className='menu col-md-12'>
   <Link href="/">
-    <div className='btn btn-success p-3 m-3'>
+    <div className='btn btn-success'>
         SUMNEWS
     </div>
     </Link>
     
-    <Link href="/TopNews/World"><div className='btn btn-success p-3 m-3'>Worldwide Top News</div></Link>
+    <Link href="/TopNews/World"><div className='btn btn-success'>Worldwide Top News</div></Link>
 
  <Link href="/BDnews">
- <div className='btn btn-success p-3 m-3'>
+ <div className='btn btn-success'>
   Bangladesh News</div></Link>
 
 
     <Link href="/Summarize">
-<div className='btn btn-success p-3 m-3'>
+<div className='btn btn-success'>
 
       Summarizer</div></Link>
       <Link href="/EditImage">
-<div className='btn btn-success p-3 m-3'>
+<div className='btn btn-success'>
         Image Editor</div></Link>
 
   </nav>
+
+    </div>
+  
  
 <hr/>
     </>

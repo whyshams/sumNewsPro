@@ -1,7 +1,9 @@
-import {useState} from 'react';
+
 import { useResultContext } from '../Contexts/ResultContextProvider';
-import Loading from './LoAding';
+
 import { CopyToClipboard } from 'react-copy-to-clipboard';
+
+
 const Summary = ({directSumData}) => {
 
   const {clear,setClear} = useResultContext();
@@ -13,22 +15,23 @@ const Summary = ({directSumData}) => {
                   directSumData ? <div className='modu'>
                     
                   <div className=' col-md-12'>
-                    <button className='btn btn-danger p-2' onClick={() => {setClear(true)}}>Close</button>
                         
                       
-                      <div className='d-block card'>
-                        <div className='nationalContent'>
-                        <h2 className='sumTitle d-flex justify-content-center align-items-center'>{directSumData.article_title}</h2>
+                      <div className='d-block contentcard'>
+                    <button className='btn btn-light p-2 mb-4' onClick={() => {setClear(true)}}>Close</button>
+
+                        <div className='maincontent'>
+                        <h2 className='contentitle d-flex justify-content-center align-items-center'>{directSumData.article_title}</h2>
                         <div className='m-2 d-flex justify-content-center align-items-center'>
-                          <img className='sumImage rounded' src={directSumData.article_image} alt={directSumData.article_title}/>
+                          <img className='image rounded' src={directSumData.article_image} alt={directSumData.article_title}/>
                         </div>
                         <CopyToClipboard text={directSumData.article_image} >
                                        <div className='d-flex justify-content-center align-items-center'>
-                                       <button className='btn btn-warning p-2 m-3 '>Copy image Link</button>
+                                       <a href='/EditImage/Editor' className='btn btn-light p-2 m-3 '>Copy image Link</a>
                                        </div>
                          </CopyToClipboard>
                         <div className=' summary justify-content-center align-items-center'>
-                        <h4 className='summary1 d-flex justify-content-center align-items-center'>Summary : </h4>
+                        <h4 className='contentparatitle d-flex justify-content-center align-items-center'>Summary : </h4>
 
                         {
                       directSumData?.summary.map(dat => (
@@ -49,7 +52,7 @@ const Summary = ({directSumData}) => {
                     
                     
                   </div> :<div>
-                  <button className='btn btn-danger p-2' onClick={() => {setClear(true)}}>Close</button>
+                  <button className='btn btn-danger p-2' onClick={() => {setClear(true)}}></button>
 
                     <h1 className='modu'>
                     Loading...
