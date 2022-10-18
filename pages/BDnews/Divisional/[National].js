@@ -13,7 +13,7 @@ import Summary from '../../../components/Summary';
 import Pagination from '../../../components/Pagination';
 import LoAding from '../../../components/LoAding';
 
-
+import Link from 'next/link';
 const National = ({Data,National}) => {
   const router = useRouter();
 const {bdNewsDataDiv,setBdNewsDataDiv,setCopied,Loading,directSumData,setDirectSumData,setDirectsumInput,clear} = useResultContext();
@@ -172,7 +172,8 @@ const paginate = pageNumber => setCurrentPage(pageNumber);
                                <a className='btn btn-light button m-3' onClick={()=> {setDirectsumInput(data.link)}}>Summarize</a>
                                <CopyToClipboard text={data.media} >
                                        
-                                       <a href='/EditImage/Editor' className='btn btn-light button m-3'>Copy Image Link</a>
+                               <Link href='/EditImage/Editor'><div className=' button btn btn-light m-3'>Copy Image Link</div></Link>
+
                                                                            </CopyToClipboard>
 
 

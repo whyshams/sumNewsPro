@@ -14,7 +14,7 @@ import Summary from '../../components/Summary';
 
 import LoAding from '../../components/LoAding';
 
-
+import Link from 'next/link';
 
 
 const Category = ({Data,Category}) => {
@@ -203,7 +203,8 @@ const paginate = pageNumber => setCurrentPage(pageNumber);
                                <a className='btn btn-light m-3 button' onClick={()=> {setDirectsumInput(res.url)}}>Summarize</a>
                                <CopyToClipboard text={res?.image?.thumbnail.contentUrl} >
                                        
-                                       <a href='/EditImage/Editor' className='btn btn-light m-3 button'>Copy image Link</a>
+                               <Link href='/EditImage/Editor'><div className=' button btn btn-light m-3'>Copy Image Link</div></Link>
+
                                                                             </CopyToClipboard>
 
 

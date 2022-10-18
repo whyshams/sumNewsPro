@@ -9,7 +9,7 @@ import Head from 'next/head';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 
 import Pagination from '../../../components/Pagination';
-
+import Link from 'next/link';
 
 
 
@@ -176,7 +176,8 @@ const paginate = pageNumber => setCurrentPage(pageNumber);
                                 <a target="_blank" rel="noreferrer" className=' btn  button btn-light m-3' href={data.link}>Read Full News</a>
                                 <CopyToClipboard text={data.media} >
                                        
-                                       <a href='/EditImage/Editor' className=' btn  button btn-light m-3'>Copy image Link</a>
+                                <Link href='/EditImage/Editor'><div className=' button btn btn-light m-3'>Copy Image Link</div></Link>
+
                                                                            </CopyToClipboard>
   
                                 </div>
