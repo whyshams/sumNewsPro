@@ -2,6 +2,7 @@ import { useResultContext } from "../Contexts/ResultContextProvider";
 import Head from "next/head";
 import LoAding from "../components/LoAding";
 import { CopyToClipboard } from "react-copy-to-clipboard";
+import Link from "next/link";
 
 const Summarize = () => {
     const {sumData,setSumInput,sumText,setSumText,Loading,sumError} = useResultContext();
@@ -69,7 +70,7 @@ const Summarize = () => {
                     <div className=' col-md-12 modu'>
                       
                       <div className='d-block contentcard'>
-                    <a href="/Summarize" className='btn btn-light p-2 mb-4' >Close</a>
+                    <Link href="/Summarize"><div className='btn btn-light p-2 mb-4' > Close</div></Link>
 
                         <div className=''>
                         <h2 className='contenttitle d-flex justify-content-center align-items-center'>{sumData.article_title}</h2>
@@ -78,7 +79,7 @@ const Summarize = () => {
                         </div>
                         <CopyToClipboard text={sumData.article_image} >
                                        <div className='d-flex justify-content-center align-items-center'>
-                                       <a href='/EditImage/Editor' className='btn btn-light p-2 m-3 '>Copy image Link</a>
+                                       <Link href='/EditImage/Editor'><div className='btn btn-light p-2 m-3 '>Copy image Link</div></Link>
                                        </div>
                          </CopyToClipboard>
                         <div className=' summary  justify-content-center align-items-center'>

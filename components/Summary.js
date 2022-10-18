@@ -2,6 +2,7 @@
 import { useResultContext } from '../Contexts/ResultContextProvider';
 
 import { CopyToClipboard } from 'react-copy-to-clipboard';
+import Link from 'next/link';
 
 
 const Summary = ({directSumData}) => {
@@ -27,7 +28,7 @@ const Summary = ({directSumData}) => {
                         </div>
                         <CopyToClipboard text={directSumData.article_image} >
                                        <div className='d-flex justify-content-center align-items-center'>
-                                       <a href='/EditImage/Editor' className='btn btn-light p-2 m-3 '>Copy image Link</a>
+                                       <Link href='/EditImage/Editor' ><div className='btn btn-light p-2 m-3 '>Copy image Link</div></Link>
                                        </div>
                          </CopyToClipboard>
                         <div className=' summary justify-content-center align-items-center'>
