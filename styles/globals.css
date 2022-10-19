@@ -107,6 +107,18 @@ select{
    
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
+.modumenu{
+  display: block; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 2; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+ 
+  background-color:black; /* Black w/ opacity */
+}
 #nprogress .bar {
   height :5px;
   background: white;
@@ -153,7 +165,24 @@ footer{
 .page-item{
   color: black;
 }
-
+.logo{
+  height: auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  margin-left: -10px;
+}
+.logo img{
+  width: 350px;
+}
+.menuicon{
+  color: white;
+  padding-top: 50px;
+  padding-left: 10px;
+  
+}
 .sumInput{
     width:400px;
     height: 35px;
@@ -210,11 +239,20 @@ footer{
       align-items: center;
 
     }
+
     .contenttitle{
       margin-top: 20px;
     }
     .copyright {
       font-size: 14px;
+    }
+    .logo{
+      margin-top: 5px;
+    }
+    .logo img{
+      height: auto;
+      width: 250px;
+      padding: 40px;
     }
     .summaryinput{
       width: 300px;

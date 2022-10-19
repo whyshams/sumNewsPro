@@ -1,19 +1,48 @@
-import {useState} from 'react';
 import Link from "next/link";
 import { useRouter } from 'next/router';
+import { BiMenu } from "react-icons/bi";
+import { useState } from "react";
+import Menu from "./Menu";
 
 
 const NavBar = () => {
-  const [bdOpen , setBdOpen] =useState(false);
-  const [bdNatOpen,setBdNatOpen] = useState(false);
-  const [homeOpen,setHomeOpen] = useState(false);
-
+  
+  const [menuOpen,setMenuOpen] = useState(false)
+ 
   const router = useRouter();
   return (
     <>
    
     <div className='row'>
-    <nav className='menu col-md-12'>
+      <div className='col-md-12 d-flex'>
+        <div className=' menuicon'>
+          {
+            !menuOpen && 
+            <div onClick={() => setMenuOpen(!menuOpen)} className='btn btn-light button' >
+            <BiMenu />
+            </div>
+            
+        
+          }
+       
+          
+         
+        </div>
+        <div className='logo'>
+          <img src='sumlogo2.png' />
+       </div>
+
+
+      </div>
+      <div className="col-md-12">
+      
+      {
+            menuOpen && <Menu menuOpen={menuOpen} setMenuOpen={setMenuOpen}/>
+          }
+
+      </div>
+    {/*
+      <nav className='menu col-md-12'>
   <Link href="/">
     <div className='btn btn-success'>
         SUMNEWS
@@ -34,8 +63,14 @@ const NavBar = () => {
       <Link href="/EditImage">
 <div className='btn btn-success'>
         Image Editor</div></Link>
+        
 
   </nav>
+    
+  */}
+  
+
+  
 
     </div>
   
