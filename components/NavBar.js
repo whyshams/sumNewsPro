@@ -15,10 +15,10 @@ const NavBar = () => {
    
     <div className='row'>
       <div className='col-md-12 d-flex'>
-        <div className=' menuicon'>
+        <div className=' menuicon' onClick={() => setMenuOpen(!menuOpen)}>
           {
             !menuOpen && 
-            <div onClick={() => setMenuOpen(!menuOpen)} className='btn btn-light button' >
+            <div  className='btn btn-light button' >
             <BiMenu />
             </div>
             
@@ -29,9 +29,15 @@ const NavBar = () => {
          
         </div>
         <div className='logo'>
-          <img src='sumlogo2.png' />
+        <Link href='/'>
+
+          <img src='logo.png' />
+        </Link>
+
        </div>
 
+        
+     
 
       </div>
       <div className="col-md-12">
@@ -41,38 +47,7 @@ const NavBar = () => {
           }
 
       </div>
-    {/*
-      <nav className='menu col-md-12'>
-  <Link href="/">
-    <div className='btn btn-success'>
-        SUMNEWS
-    </div>
-    </Link>
-    
-    <Link href="/TopNews/World"><div className='btn btn-success'>Worldwide Top News</div></Link>
-
- <Link href="/BDnews">
- <div className='btn btn-success'>
-  Bangladesh News</div></Link>
-
-
-    <Link href="/Summarize">
-<div className='btn btn-success'>
-
-      Summarizer</div></Link>
-      <Link href="/EditImage">
-<div className='btn btn-success'>
-        Image Editor</div></Link>
-        
-
-  </nav>
-    
-  */}
-  
-
-  
-
-    </div>
+  </div>
   
  
 <hr/>

@@ -3,6 +3,7 @@ import Head from "next/head";
 import LoAding from "../components/LoAding";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import Link from "next/link";
+import {FacebookShareButton,FacebookIcon,FacebookMessengerShareButton,FacebookMessengerIcon,WhatsappShareButton,WhatsappIcon,TwitterShareButton,TwitterIcon,TelegramShareButton,TelegramIcon} from 'react-share';
 
 const Summarize = () => {
     const {sumData,setSumInput,sumText,setSumText,Loading,sumError} = useResultContext();
@@ -16,7 +17,7 @@ const Summarize = () => {
       }
     
  
-    
+    console.log(sumData)
       return (
         <div>
           <Head>
@@ -70,12 +71,12 @@ const Summarize = () => {
                     <div className=' col-md-12 modu'>
                       
                       <div className='d-block contentcard'>
-                    <Link href="/Summarize"><div className='btn btn-light p-2 mb-4' > Close</div></Link>
+                    <Link href="/Summarize"><div className='btn btn-light p-2 mb-4 button' > Close</div></Link>
 
                         <div className=''>
                         <h2 className='contenttitle d-flex justify-content-center align-items-center'>{sumData.article_title}</h2>
                         <div className='m-2 d-flex justify-content-center align-items-center'>
-                          <img className='image rounded' src={sumData.article_image} alt={sumData.article_title}/>
+                          <img className='sumimage rounded' src={sumData.article_image} alt={sumData.article_title}/>
                         </div>
                         <CopyToClipboard text={sumData.article_image} >
                                        <div className='d-flex justify-content-center align-items-center'>
@@ -94,6 +95,22 @@ const Summarize = () => {
                     }
 
                         </div>
+                        <div className='col-md-12'>
+                                  <h4 className='contentparatitle'>Share this</h4>
+                                  <div className='sharebutton'>
+                                <FacebookShareButton url={sumData.article_url}><FacebookIcon/></FacebookShareButton>
+                                <FacebookMessengerShareButton url={sumData.article_url} appId='611096880759273'><FacebookMessengerIcon/></FacebookMessengerShareButton>
+                                <WhatsappShareButton url={sumData.article_url} title={sumData.article_title}><WhatsappIcon/></WhatsappShareButton>
+                                <TwitterShareButton url={sumData.article_url} title={sumData.article_title} ><TwitterIcon/></TwitterShareButton>
+                                <TelegramShareButton url={sumData.article_url} title={sumData.article_title}><TelegramIcon/></TelegramShareButton>
+                                
+                                
+
+
+                                  </div>
+
+
+                                </div>
 
                         </div>
                        

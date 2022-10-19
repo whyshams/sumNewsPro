@@ -15,7 +15,7 @@ import Summary from '../../components/Summary';
 import LoAding from '../../components/LoAding';
 
 import Link from 'next/link';
-
+import {FacebookShareButton,FacebookIcon,FacebookMessengerShareButton,FacebookMessengerIcon,WhatsappShareButton,WhatsappIcon,TwitterShareButton,TwitterIcon,TelegramShareButton,TelegramIcon} from 'react-share';
 
 const Category = ({Data,Category}) => {
     const {catData, setCatData,directSumData,setDirectSumData,setDirectsumInput,clear,Loading} = useResultContext();
@@ -203,7 +203,7 @@ const paginate = pageNumber => setCurrentPage(pageNumber);
                                <a className='btn btn-light m-3 button' onClick={()=> {setDirectsumInput(res.url)}}>Summarize</a>
                                <CopyToClipboard text={res?.image?.thumbnail.contentUrl} >
                                        
-                               <Link href='/EditImage/Editor'><div className=' button btn btn-light m-3'>Copy Image Link</div></Link>
+                               <div className=' button btn btn-light m-3'><Link href='/EditImage/Editor'>Copy Image Link</Link></div>
 
                                                                             </CopyToClipboard>
 
@@ -213,6 +213,22 @@ const paginate = pageNumber => setCurrentPage(pageNumber);
                                  
                            
                                </div>
+                               <div className='col-md-12'>
+                                  <h4 className='contentparatitle'>Share this</h4>
+                                  <div className='sharebutton'>
+                                <FacebookShareButton url={res.url}><FacebookIcon/></FacebookShareButton>
+                                <FacebookMessengerShareButton url={res.url} appId='611096880759273'><FacebookMessengerIcon/></FacebookMessengerShareButton>
+                                <WhatsappShareButton url={res.url} title={res.name}><WhatsappIcon/></WhatsappShareButton>
+                                <TwitterShareButton url={res.url} title={res.name} ><TwitterIcon/></TwitterShareButton>
+                                <TelegramShareButton url={res.url} title={res.name}><TelegramIcon/></TelegramShareButton>
+                                
+                                
+
+
+                                  </div>
+
+
+                                </div>
                              
 
 

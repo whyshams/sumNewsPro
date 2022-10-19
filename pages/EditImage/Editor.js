@@ -22,8 +22,8 @@ export default function Editor() {
   }
   
  
-  const urlPc =`https://studio.pixelixe.com/#api?apiKey=MVbGok3k3EWxgNq2rI48RjkJ5kQ2&imageUrl=${image}`;
-  const urlMb = `https://studio.pixelixe.com/mobile/#api?apiKey=MVbGok3k3EWxgNq2rI48RjkJ5kQ2&imageUrl=${image}`;
+  const urlPc =`https://studio.pixelixe.com/#api?apiKey=m1hn2PIlcZa89AlSr1EG37YjPlD3&imageUrl=${image}`;
+  const urlMb = `https://studio.pixelixe.com/mobile/#api?apiKey=m1hn2PIlcZa89AlSr1EG37YjPlD3&imageUrl=${image}`;
   
   return (
     <>

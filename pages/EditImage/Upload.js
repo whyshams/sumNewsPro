@@ -9,7 +9,7 @@ const Upload = () => {
         height="1080"
         allowfullscreen
         frameBorder="0"
-        src="https://studio.pixelixe.com/#api?apiKey=MVbGok3k3EWxgNq2rI48RjkJ5kQ2&allowUploadOnly=true" >
+        src="https://studio.pixelixe.com/#api?apiKey=m1hn2PIlcZa89AlSr1EG37YjPlD3&allowUploadOnly=true" >
     </iframe>
 
       </div>
@@ -22,7 +22,7 @@ const Upload = () => {
   height="896"
   allowfullscreen
   frameBorder="0"
-  src="https://studio.pixelixe.com/mobile/#api?apiKey=MVbGok3k3EWxgNq2rI48RjkJ5kQ2&allowUploadOnly=true" >
+  src="https://studio.pixelixe.com/mobile/#api?apiKey=m1hn2PIlcZa89AlSr1EG37YjPlD3&allowUploadOnly=true" >
 </iframe>
 
 </div>

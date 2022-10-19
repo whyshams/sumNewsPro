@@ -9,10 +9,10 @@ const Menu = ({menuOpen,setMenuOpen}) => {
               <nav className='menu col-md-12'>
                 {
                     menuOpen &&       <div className='col-md-12 d-flex'>
-                    <div className=' menuicon'>
+                    <div className=' menuicon' onClick={() => setMenuOpen(!menuOpen)}>
                       {
                         menuOpen && 
-                        <div onClick={() => setMenuOpen(!menuOpen)} className='btn btn-light button' >
+                        <div  className='btn btn-light button' >
                         <GiCancel/>
                         </div>
                         
@@ -23,27 +23,33 @@ const Menu = ({menuOpen,setMenuOpen}) => {
                      
                     </div>
                     <div className='logo'>
-                      <img src='sumlogo2.png' />
+                    <Link href='/'>
+
+                      <img src='logo.png' />
+                    </Link>
+
                    </div>
+                    
+                   
             
             
                   </div>
                 }
  
-    <div className='menu'>
-    <Link href="/TopNews/World"><div className='btn btn-success' onClick={() => setMenuOpen(!menuOpen)}>Worldwide Top News</div></Link>
+    <div className='menu col-md-12 d-md-flex d-block justify-content-center align-items-center'>
+    <Link href="/TopNews/World"><div className='btn btn-light m-3 p-5 button' onClick={() => setMenuOpen(!menuOpen)}>Worldwide Top News</div></Link>
 
 <Link href="/BDnews">
-<div className='btn btn-success' onClick={() => setMenuOpen(!menuOpen)}>
+<div className='btn btn-light m-3 p-5 button' onClick={() => setMenuOpen(!menuOpen)}>
  Bangladesh News</div></Link>
 
 
    <Link href="/Summarize">
-<div onClick={() => setMenuOpen(!menuOpen)} className='btn btn-success'>
+<div onClick={() => setMenuOpen(!menuOpen)} className='btn btn-light m-3 p-5 button'>
 
      Summarizer</div></Link>
      <Link href="/EditImage">
-<div onClick={() => setMenuOpen(!menuOpen)} className='btn btn-success'>
+<div onClick={() => setMenuOpen(!menuOpen)} className='btn btn-light m-3 p-5 button'>
        Image Editor</div></Link>
        
 

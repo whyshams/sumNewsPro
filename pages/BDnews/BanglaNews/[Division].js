@@ -10,6 +10,7 @@ import { CopyToClipboard } from 'react-copy-to-clipboard';
 
 import Pagination from '../../../components/Pagination';
 import Link from 'next/link';
+import {FacebookShareButton,FacebookIcon,FacebookMessengerShareButton,FacebookMessengerIcon,WhatsappShareButton,WhatsappIcon,TwitterShareButton,TwitterIcon,TelegramShareButton,TelegramIcon} from 'react-share';
 
 
 
@@ -174,13 +175,32 @@ const paginate = pageNumber => setCurrentPage(pageNumber);
                                    
                                 <div className=' col-12 col-md-12 d-flex d-md-flex justify-content-center'>
                                 <a target="_blank" rel="noreferrer" className=' btn  button btn-light m-3' href={data.link}>Read Full News</a>
+                                
                                 <CopyToClipboard text={data.media} >
                                        
-                                <Link href='/EditImage/Editor'><div className=' button btn btn-light m-3'>Copy Image Link</div></Link>
+                                <div className=' button btn btn-light m-3'><Link href='/EditImage/Editor'>Copy Image Link </Link></div>
 
-                                                                           </CopyToClipboard>
+                                </CopyToClipboard>
+                                                                          
   
                                 </div>
+                                <div className='col-md-12'>
+                                  <h4 className='contentparatitle'>Share this</h4>
+                                  <div className='sharebutton'>
+                                <FacebookShareButton url={data.link}><FacebookIcon/></FacebookShareButton>
+                                <FacebookMessengerShareButton url={data.link} appId='611096880759273'><FacebookMessengerIcon/></FacebookMessengerShareButton>
+                                <WhatsappShareButton url={data.link} title={data.title}><WhatsappIcon/></WhatsappShareButton>
+                                <TwitterShareButton url={data.link} title={data.title} ><TwitterIcon/></TwitterShareButton>
+                                <TelegramShareButton url={data.link} title={data.title}><TelegramIcon/></TelegramShareButton>
+                                
+                                
+
+
+                                  </div>
+
+
+                                </div>
+
                                  </div>
   
           <hr/>

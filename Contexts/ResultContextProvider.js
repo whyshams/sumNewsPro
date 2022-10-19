@@ -49,7 +49,7 @@ export default function ResultContextProvider  ({children})  {
              url : `https://tldrthis.p.rapidapi.com/v1/model/extractive/summarize-url/`,
              headers: {
                'content-type': 'application/json',
-               'X-RapidAPI-Key': '42ca516b7amshb3430e4d7c91715p1b5024jsnb40e2e325bd9',
+               'X-RapidAPI-Key': '3c84603cf9msh4143e6aff6a8074p1c4935jsnf23b029efa30',
                'X-RapidAPI-Host': 'tldrthis.p.rapidapi.com'
                },
              data: `{"url":"${sumInput}","min_length":100,"max_length":300,"is_detailed":true}`
@@ -69,7 +69,7 @@ export default function ResultContextProvider  ({children})  {
              url : "https://tldrthis.p.rapidapi.com/v1/model/extractive/summarize-url/",
              headers: {
                'content-type': 'application/json',
-               'X-RapidAPI-Key': '42ca516b7amshb3430e4d7c91715p1b5024jsnb40e2e325bd9',
+               'X-RapidAPI-Key': '0ea5875e08msh2ec564c6381f6e8p10c302jsn3dbc1337386d',
                'X-RapidAPI-Host': 'tldrthis.p.rapidapi.com'
                },
              data: `{"url":"${directSumInput}","min_length":100,"max_length":300,"is_detailed":true}`

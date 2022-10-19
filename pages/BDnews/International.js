@@ -9,6 +9,7 @@ import Head from 'next/head';
 import Summary from '../../components/Summary';
 import LoAding from '../../components/LoAding';
 import Link from 'next/link';
+import {FacebookShareButton,FacebookIcon,FacebookMessengerShareButton,FacebookMessengerIcon,WhatsappShareButton,WhatsappIcon,TwitterShareButton,TwitterIcon,TelegramShareButton,TelegramIcon} from 'react-share';
 
 
 
@@ -113,12 +114,28 @@ const paginate = pageNumber => setCurrentPage(pageNumber);
                                <a className='btn btn-light m-3 button'  onClick={()=> {setDirectsumInput(data.url) }}>Summarize</a>
                                <CopyToClipboard text={data.urlToImage} >
                                        
-                               <Link href='/EditImage/Editor'><div className=' button btn btn-light m-3'>Copy Image Link</div></Link>
+                               <div className=' button btn btn-light m-3'><Link href='/EditImage/Editor'>Copy Image Link</Link></div>
 
                                                                            </CopyToClipboard>
 
                               </div>
                                </div>
+                               <div className='col-md-12'>
+                                  <h4 className='contentparatitle'>Share this</h4>
+                                  <div className='sharebutton'>
+                                <FacebookShareButton url={data.url}><FacebookIcon/></FacebookShareButton>
+                                <FacebookMessengerShareButton url={data.url} appId='611096880759273'><FacebookMessengerIcon/></FacebookMessengerShareButton>
+                                <WhatsappShareButton url={data.url} title={data.title}><WhatsappIcon/></WhatsappShareButton>
+                                <TwitterShareButton url={data.url} title={data.title} ><TwitterIcon/></TwitterShareButton>
+                                <TelegramShareButton url={data.url} title={data.title}><TelegramIcon/></TelegramShareButton>
+                                
+                                
+
+
+                                  </div>
+
+
+                                </div>
                            
                               
 

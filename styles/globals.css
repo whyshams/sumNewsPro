@@ -39,8 +39,24 @@
   margin-top: 20px;
   margin-bottom: 20px;
 }
+.sharebutton{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sharebutton svg{
+  height: 35px;
+  width: 35px;
+  margin: 5px;
+  border-radius: 50px;
+}
 .button{
   font-weight: 700;
+  
+}
+a{
+  text-decoration: none;
+  color: black;
 }
 .pagenamecard{
   color: white;
@@ -95,6 +111,10 @@ select{
   text-align: center;
   font-family: 'Bebas Neue',cursive;
 }
+.sumimage{
+    height: auto;
+    width: 600px;
+}
 .modu{
     display: block; /* Hidden by default */
     position: fixed; /* Stay in place */
@@ -106,6 +126,10 @@ select{
     overflow: auto; /* Enable scroll if needed */
    
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+.menu{
+  text-align: center;
+  min-height: 50vh;
 }
 .modumenu{
   display: block; /* Hidden by default */
@@ -239,7 +263,10 @@ footer{
       align-items: center;
 
     }
-
+    .sumimage{
+      height: auto;
+      width: 100%;
+    }
     .contenttitle{
       margin-top: 20px;
     }
