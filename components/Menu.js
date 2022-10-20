@@ -25,7 +25,7 @@ const Menu = ({menuOpen,setMenuOpen}) => {
                     <div className='logo'>
                     <Link href='/'>
 
-                      <img src='logo.png' />
+                      <img src='/logo.png' />
                     </Link>
 
                    </div>

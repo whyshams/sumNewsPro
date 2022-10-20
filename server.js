@@ -2,6 +2,7 @@
 const { createServer } = require('http')
 const { parse } = require('url')
 const next = require('next')
+const {join} = require('path')
 
 const dev = process.env.NODE_ENV !== 'production'
 const hostname = 'localhost'
@@ -22,6 +23,9 @@ app.prepare().then(() => {
         await app.render(req, res, '/a', query)
       } else if (pathname === '/b') {
         await app.render(req, res, '/b', query)
+      } else if (pathname === '/sw.js' || /^\/(workbox|worker|fallback)-\w+\.js$/.test(pathname)) {
+        const filePath = join(__dirname, '.next', pathname)
+        app.serveStatic(req, res, filePath)
       } else {
         await handle(req, res, parsedUrl)
       }
