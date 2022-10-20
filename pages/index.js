@@ -14,37 +14,28 @@ export default function Home() {
       <div className='fullscreen row '>
         
         <div className="col-md-12">
-          <div className="d-flex justify-content-center align-items-center mt-2">
-            <Link href='/BDnews'>
-              <div className="frontbtn btn btn-light button ">
-                <h4 className="contenttitle   ">
-                  READ
-                </h4>
-              </div>
-            </Link>
-          </div>
+        <div className="d-flex justify-content-center align-items-center">
+            <h4 className="mainpagetitle">
+                    READ
+              </h4>
+
+            </div>
         </div>
         <div className="col-md-12">
-          <div className="d-flex justify-content-center align-items-center">
-          <Link href='/Summarize'>
-              <div className="frontbtn btn  button btn-light">
-                <h4 className="text-center contenttitle ">
-                  SUMMARIZE
-                </h4>
-              </div>
-            </Link>
-          </div>
+        <div className="d-flex justify-content-center align-items-center">
+            <h4 className="mainpagetitle">
+                    SUMMARIZE
+              </h4>
+
+            </div>
         </div>
         <div className="col-md-12">
-          <div className="d-flex justify-content-center align-items-center">
-          <Link href='/EditImage'>
-              <div className="frontbtn btn btn-light button">
-                <h4 className="text-center contenttitle ">
-                  CREATE
-                </h4>
-              </div>
-            </Link>
-          </div>
+        <div className="d-flex justify-content-center align-items-center">
+            <h4 className="mainpagetitle">
+                    CREATE
+              </h4>
+
+            </div>
         </div>
         <div className="col-md-12">
           <div className="text-center">
