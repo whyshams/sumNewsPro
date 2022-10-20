@@ -40,12 +40,12 @@ const Layout = ({children}) => {
     
   return (
     <>
-         
+         <div className='maindiv'>
        <Head>
        
      
       </Head>
-      <div className='maindiv'>
+      
       <div className=" row  col-lg-12 col-12">
         
         <header className=" col-12 col-lg-12 ">
@@ -55,7 +55,7 @@ const Layout = ({children}) => {
 
        
 
-        {loading ? <LoAding/> :<div className="col-12 col-lg-12"> {children} </div>}
+        {loading ? <LoAding/> :<div className="m-2 col-12 col-lg-12"> {children} </div>}
 
      </div>
      <footer className='col-lg-12 col-12'>
