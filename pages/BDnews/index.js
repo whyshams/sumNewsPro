@@ -2,25 +2,17 @@ import Link from "next/link"
 
 const index = () => {
   return (
-    <div>
+    <div className="">
       <div className='menu col-md-12 d-md-flex d-block justify-content-center align-items-center'>
-      <nav className="btn btn-light m-3 p-5 button">
-      <Link href='/BDnews/Categorical/news'><div>Categorical</div></Link>
+      <Link href='/BDnews/Categorical/news'><div className="btn btn-light m-3 p-5 button">Categorical</div></Link>
 
-      </nav>
      
-<nav className="btn btn-light m-3 p-5 button">
-<Link href='/BDnews/Divisional/Dhaka'><div>Divisional</div></Link>
+<Link href='/BDnews/Divisional/Dhaka'><div className="btn btn-light m-3 p-5 button">Divisional</div></Link>
 
-</nav> 
-<nav className="btn btn-light m-3 p-5 button">
-<Link href='/BDnews/International'><div>International</div></Link>
+<Link href='/BDnews/International'><div className="btn btn-light m-3 p-5 button">International</div></Link>
 
-</nav>
-<nav className="btn btn-light m-3 p-5 button">
-<Link href='/BDnews/BanglaNews/ঢাকা'><div>বাংলা সংবাদ</div></Link>
+<Link href='/BDnews/BanglaNews/ঢাকা'><div className="btn btn-light m-3 p-5 button">বাংলা সংবাদ</div></Link>
 
-</nav>
 
       </div>
     

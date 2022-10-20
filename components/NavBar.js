@@ -13,7 +13,7 @@ const NavBar = () => {
   return (
     <>
    
-    <div className='row'>
+    <div className='row header'>
       <div className='col-md-12 d-flex'>
         <div className=' menuicon' onClick={() => setMenuOpen(!menuOpen)}>
           {
@@ -50,7 +50,6 @@ const NavBar = () => {
   </div>
   
  
-<hr/>
     </>
   )
 }

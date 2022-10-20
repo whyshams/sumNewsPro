@@ -7,10 +7,18 @@
 }
 .maindiv{
   background-color: black;
+ 
+}
+.hr{
+  color: white;
+  
 }
 .image{
     height:auto;
     width:100%;
+    animation-name: fadeIn;
+    animation-timing-function: ease-out;
+    animation-duration: 700ms;
 }
 .contentcard{
   color: white;
@@ -19,6 +27,9 @@
   background-color: #28282B;
   padding: 20px;
   margin-left: 10px;
+  animation-name: fadeIn;
+  animation-timing-function: ease-out;
+  animation-duration: 700ms;
  
 }
 .contenttitle{
@@ -52,6 +63,9 @@
 }
 .button{
   font-weight: 700;
+  animation-name: fadeIn;
+  animation-timing-function: ease-out;
+  animation-duration: 700ms;
   
 }
 a{
@@ -130,6 +144,11 @@ select{
 .menu{
   text-align: center;
   min-height: 50vh;
+  margin-bottom: 50px;
+}
+.frontbtn{
+  margin-bottom: 20px;
+  padding: 15px 150px;
 }
 .modumenu{
   display: block; /* Hidden by default */
@@ -197,14 +216,23 @@ footer{
   align-items: center;
   margin-top: 20px;
   margin-left: -10px;
+ 
+  
 }
 .logo img{
+  animation-name: fadeIn;
+  animation-timing-function: ease-out;
+  animation-duration: 500ms;
   width: 350px;
 }
 .menuicon{
   color: white;
   padding-top: 50px;
   padding-left: 10px;
+  animation-name: fadeIn;
+  animation-timing-function: ease-out;
+  animation-duration: 700ms;
+  
   
 }
 .sumInput{
@@ -255,6 +283,29 @@ footer{
       opacity: 0;
     }
   }
+  @keyframes fadeIn {
+    from {
+      transform: scale(0);
+      opacity: 0;
+    }
+  
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+@keyframes upDown {
+  from {
+   margin-top: -1000px;
+   opacity: 0;
+  }
+
+  to {
+    margin-top: 0;
+    opacity: 1;
+  }
+}
 
   @media screen and (max-width: 600px) {
     .button{
@@ -263,6 +314,9 @@ footer{
       align-items: center;
 
     }
+   .frontbtn{
+    padding: 10px 70px;
+   }
     .sumimage{
       height: auto;
       width: 100%;

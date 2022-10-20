@@ -34,7 +34,9 @@ const Menu = ({menuOpen,setMenuOpen}) => {
             
             
                   </div>
+                  
                 }
+                <hr className='hr'/>
  
     <div className='menu col-md-12 d-md-flex d-block justify-content-center align-items-center'>
     <Link href="/TopNews/World"><div className='btn btn-light m-3 p-5 button' onClick={() => setMenuOpen(!menuOpen)}>Worldwide Top News</div></Link>

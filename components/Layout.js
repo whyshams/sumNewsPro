@@ -51,6 +51,8 @@ const Layout = ({children}) => {
         <header className=" col-12 col-lg-12 ">
         <NavBar/>
         </header>
+<hr className="hr"/>
+
        
 
         {loading ? <LoAding/> :<div className="col-12 col-lg-12"> {children} </div>}
