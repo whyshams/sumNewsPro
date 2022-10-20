@@ -2,4 +2,4 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/sumnewsb/public_html/
-    - /bin/cp -R sumnewspro $DEPLOYPATH
+    - /bin/cp -R main $DEPLOYPATH
